@@ -12,7 +12,16 @@ router.get("/test-me", function (req, res) {
 
 
 
-router.post("/createBook", BookController.createBook  )
+router.get("/hitapi1", commonMW.hitapi1)
+router.get("/hitapi2", commonMW.hitapi2)
+router.get("/hitapi3", commonMW.hitapi3)
+router.get("/hitapi4", commonMW.hitapi4)
+
+router.get("/basicRoute", commonMW.hitapi1, commonMW.hitapi2, commonMW.hitapi3, UserController.basicCode)
+
+
+module.exports = router;
+
 
 
 
@@ -48,7 +57,7 @@ router.post("/createBook", BookController.createBook  )
 
 
 
-router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4, UserController.basicCode)
+
 
 
 
@@ -59,4 +68,3 @@ router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.
 
 
 
-module.exports = router;
